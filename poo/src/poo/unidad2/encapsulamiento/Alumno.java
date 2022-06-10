@@ -6,6 +6,7 @@
 package poo.unidad2.encapsulamiento;
 
 import java.time.LocalDate;
+import java.time.Month;
 import java.util.Date;
 
 /**
@@ -18,7 +19,7 @@ public class Alumno {
     private String nombre;
     private String apellidos;
     private LocalDate fechaNacimiento;
-    private Date fechaIngreso;
+    private LocalDate fechaIngreso=LocalDate.now();
     private int semestre;
 
     public Carrera carrera;
@@ -56,4 +57,30 @@ public class Alumno {
             System.err.println("El nombre es obligatorio");
         }
     }
+
+    public LocalDate getFechaIngreso() {
+        return fechaIngreso;
+    }
+
+    public void setFechaIngreso(LocalDate fechaIngreso) {
+        //que sea del agosto 97 en adelante y a lo mucho tan grande como hoy
+        LocalDate minima = LocalDate.of(1, 8, 1997);
+        LocalDate maxima = LocalDate.now();
+        if (fechaIngreso.isAfter(minima)
+                && fechaIngreso.isBefore(maxima)) {
+            if (fechaIngreso.getMonthValue() == 1
+                    || fechaIngreso.getMonthValue() == 8) {
+                this.fechaIngreso = fechaIngreso;
+            } else {
+                System.err.println("El mes de ingreso no es válido, "
+                        + "debe ser enero o agosto");
+            }
+        } else {
+            System.err.println("Fecha de ingreso no válida (las fechas válidas "
+                    + "deben ir de " +minima + " al " + maxima+")");
+        }
+
+        
+    }
+
 }

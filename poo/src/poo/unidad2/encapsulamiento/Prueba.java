@@ -19,14 +19,26 @@ public class Prueba {
         Date fecha1=new Date();
         //Crear un objeto LocalDate con la fecha actual
         LocalDate fecha2=LocalDate.now();
+        System.out.println(fecha1);
+        System.out.println(fecha2);
         
         //cambiar la fecha 1 y 2 para el 30 de enero de 2022
-        fecha1=new Date(2022,1,30);
+        fecha1=new Date(2022-1900,0,30);
         fecha2=LocalDate.of(2022, Month.JANUARY, 30);
         fecha2=LocalDate.of(2022, 1, 30);
         
-        System.out.println(fecha1);
-        System.out.println(fecha2);
+        //System.out.println(fecha1);
+        //System.out.println(fecha2);
+        
+        System.out.println(fecha1.getDate() +" de " +
+                fecha1.getMonth() +" de " +
+                fecha1.getYear());
+        
+        System.out.println(fecha2.getDayOfMonth() +" de " +
+                fecha2.getMonth()+" de " +
+                fecha2.getYear());
+        
+        
         
         
         Alumno alumno1=new Alumno();
