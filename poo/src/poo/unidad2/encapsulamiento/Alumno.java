@@ -19,7 +19,7 @@ public class Alumno {
     private String nombre;
     private String apellidos;
     private LocalDate fechaNacimiento;
-    private LocalDate fechaIngreso=LocalDate.now();
+    private LocalDate fechaIngreso;//=LocalDate.now();
     private int semestre;
 
     public Carrera carrera;
@@ -82,5 +82,26 @@ public class Alumno {
 
         
     }
+    
+    
+    public int getSemestre(){
+        //Identificar los periodos
+        int periodoActual,periodoIngreso;
+        if(LocalDate.now().getMonthValue()<=6){
+            periodoActual=1;
+        }else{
+            periodoActual=2;
+        }
+        if(fechaIngreso==null){
+            return 0;
+        }else if(fechaIngreso.getMonthValue()<=6){
+            periodoIngreso=1;
+        }else{
+            periodoIngreso=2;
+        }
+//El periodo de ingreso y actual es el mismo
+        
+    }
+    
 
 }
