@@ -64,7 +64,7 @@ public class Alumno {
 
     public void setFechaIngreso(LocalDate fechaIngreso) {
         //que sea del agosto 97 en adelante y a lo mucho tan grande como hoy
-        LocalDate minima = LocalDate.of(1, 8, 1997);
+        LocalDate minima = LocalDate.of(1997, 8, 1);
         LocalDate maxima = LocalDate.now();
         if (fechaIngreso.isAfter(minima)
                 && fechaIngreso.isBefore(maxima)) {
@@ -99,7 +99,15 @@ public class Alumno {
         }else{
             periodoIngreso=2;
         }
-//El periodo de ingreso y actual es el mismo
+        
+        semestre=(LocalDate.now().getYear()-fechaIngreso.getYear())*2;
+        //El periodo de ingreso y actual es el mismo
+        if(periodoActual==periodoIngreso){
+            semestre++;
+        }else if (periodoIngreso<periodoActual){        
+            semestre+=2;
+        }
+        return semestre;
         
     }
     

@@ -14,8 +14,10 @@ import java.util.Date;
  * @author paveg
  */
 public class Prueba {
+
     public static void main(String[] args) {
-        //Crear un objeto Date con la fecha actual
+        /*        
+//Crear un objeto Date con la fecha actual
         Date fecha1=new Date();
         //Crear un objeto LocalDate con la fecha actual
         LocalDate fecha2=LocalDate.now();
@@ -38,10 +40,9 @@ public class Prueba {
                 fecha2.getMonth()+" de " +
                 fecha2.getYear());
         
-        
-        
-        
-        Alumno alumno1=new Alumno();
+         */
+
+        Alumno alumno1 = new Alumno();
 //        System.out.println(alumno1.getNoControl());
         alumno1.setNoControl("s21120001");
 //        alumno1.setNoControl("s2");
@@ -49,7 +50,15 @@ public class Prueba {
 //        alumno1.setNombre("                               ");
 //        alumno1.setNombre(null);
         alumno1.setNombre("Maria Luz");
-        
-        System.out.println(alumno1);
+//        alumno1.setFechaIngreso(LocalDate.of(2022, 1, 1));
+        alumno1.setFechaIngreso(null);
+        System.out.println(alumno1.getFechaIngreso() + " sem: "
+                + alumno1.getSemestre());
+//        alumno1.setFechaIngreso(LocalDate.of(2021, 1, 1));
+//        System.out.println(alumno1.getFechaIngreso() + " sem: "
+//                + alumno1.getSemestre());
+//        alumno1.setFechaIngreso(LocalDate.of(2021, 8, 1));
+//        System.out.println(alumno1.getFechaIngreso() + " sem: "
+//                + alumno1.getSemestre());
     }
 }
