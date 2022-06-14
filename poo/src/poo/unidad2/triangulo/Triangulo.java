@@ -18,9 +18,10 @@ public class Triangulo {
     }
     
     public Triangulo(double base, double altura){
-        this.base=base;
-        this.altura=altura;
+        setBase(base);
+        setAltura(altura);
     }
+    
     
     public double getBase(){
         return base;

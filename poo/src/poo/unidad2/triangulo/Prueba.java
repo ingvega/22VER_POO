@@ -20,5 +20,11 @@ public class Prueba {
         System.out.println("Base " + t.getBase());
         System.out.println("Altura " + t.getAltura());
         
+        Triangulo t2;
+        t2=new Triangulo(-5,4);
+         System.out.println("--------------------------------------");
+        System.out.println("Base " + t2.getBase());
+        System.out.println("Altura " + t2.getAltura());
+        
     }
 }

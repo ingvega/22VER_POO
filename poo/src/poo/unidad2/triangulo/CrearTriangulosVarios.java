@@ -32,11 +32,5 @@ public class CrearTriangulosVarios {
                     t.getBase() + " Altura = "+t.getAltura());
         }
                 
-                
-                
-                
-                
-                
-        
     }
 }
