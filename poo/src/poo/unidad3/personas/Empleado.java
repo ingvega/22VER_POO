@@ -13,7 +13,20 @@ import java.time.LocalDate;
  */
 public class Empleado extends Persona {
     private int clave;
-    private LocalDate fechaIngreso;
+    
+    public void setFechaIngreso(LocalDate fechaIngreso) {
+        //que sea del agosto 96 en adelante y a lo mucho tan grande como hoy
+        LocalDate minima = LocalDate.of(1996, 8, 1);
+        LocalDate maxima = LocalDate.now();
+        if (fechaIngreso.isAfter(minima)
+                && fechaIngreso.isBefore(maxima)) {
+                //this.fechaIngreso = fechaIngreso;
+                setFechaIngreso(fechaIngreso);
+        } else {
+            System.err.println("Fecha de ingreso no válida (las fechas válidas "
+                    + "deben ir de " +minima + " al " + maxima+")");
+        }
+    }
 
     public int getClave() {
         return clave;
@@ -23,13 +36,7 @@ public class Empleado extends Persona {
         this.clave = clave;
     }
 
-    public LocalDate getFechaIngreso() {
-        return fechaIngreso;
-    }
-
-    public void setFechaIngreso(LocalDate fechaIngreso) {
-        this.fechaIngreso = fechaIngreso;
-    }
+    
     
     
     

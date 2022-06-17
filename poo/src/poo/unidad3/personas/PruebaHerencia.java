@@ -14,18 +14,18 @@ import java.time.LocalDate;
 public class PruebaHerencia {
     public static void main(String[] args) {
         Persona p=new Persona();
-        p.setNombre("Jose");
+        p.setNombre("J");
         p.setApellidos("Dominguez");
         
         Alumno a=new Alumno();
-        a.setNombre("Jose");
+        a.setNombre("Jose56789012345678901234567890123");
         a.setApellidos("Dominguez");
         a.setSemestre(1);
         
         Docente d=new Docente();
         d.setNombre("Jose");
         d.setApellidos("Dominguez");
-        d.setFechaIngreso(LocalDate.now());
+        d.setFechaIngreso(LocalDate.now().minusDays(5));
                 
         
     }
