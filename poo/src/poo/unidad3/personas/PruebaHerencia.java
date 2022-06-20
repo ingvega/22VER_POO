@@ -18,9 +18,9 @@ public class PruebaHerencia {
         p.setApellidos("Dominguez");
         
         Alumno a=new Alumno();
-        a.setNombre("Jose56789012345678901234567890123");
+        a.setNombre("Jose");
         a.setApellidos("Dominguez");
-        a.setTelefono("1234567890");
+        a.setTelefono("1234567878");
         a.setSemestre(1);
         
         Docente d=new Docente();

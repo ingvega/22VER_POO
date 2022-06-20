@@ -21,7 +21,7 @@ public class Empleado extends Persona {
         if (fechaIngreso.isAfter(minima)
                 && fechaIngreso.isBefore(maxima)) {
                 //this.fechaIngreso = fechaIngreso;
-                setFechaIngreso(fechaIngreso);
+                super.setFechaIngreso(fechaIngreso);
         } else {
             System.err.println("Fecha de ingreso no válida (las fechas válidas "
                     + "deben ir de " +minima + " al " + maxima+")");

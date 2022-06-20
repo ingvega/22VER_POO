@@ -5,6 +5,8 @@
  */
 package poo.unidad3.personas;
 
+import java.time.LocalDate;
+
 /**
  *
  * @author paveg
@@ -47,6 +49,24 @@ public class Alumno extends Persona{
         this.carrera = carrera;
     }
     
+    public void setFechaIngreso(LocalDate fechaIngreso) {
+        //que sea del agosto 97 en adelante y a lo mucho tan grande como hoy
+        LocalDate minima = LocalDate.of(1997, 8, 1);
+        LocalDate maxima = LocalDate.now();
+        if (fechaIngreso.isAfter(minima)
+                && fechaIngreso.isBefore(maxima)) {
+            if (fechaIngreso.getMonthValue() == 1
+                    || fechaIngreso.getMonthValue() == 8) {
+                super.setFechaIngreso(fechaIngreso);
+            } else {
+                System.err.println("El mes de ingreso no es válido, "
+                        + "debe ser enero o agosto");
+            }
+        } else {
+            System.err.println("Fecha de ingreso no válida (las fechas válidas "
+                    + "deben ir de " + minima + " al " + maxima + ")");
+        }
+    }
     
     
 }
