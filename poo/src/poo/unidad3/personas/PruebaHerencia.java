@@ -14,12 +14,13 @@ import java.time.LocalDate;
 public class PruebaHerencia {
     public static void main(String[] args) {
         Persona p=new Persona();
-        p.setNombre("J");
+        p.setNombre("     Maria      Soledad     Karina     ");
         p.setApellidos("Dominguez");
         
         Alumno a=new Alumno();
         a.setNombre("Jose56789012345678901234567890123");
         a.setApellidos("Dominguez");
+        a.setTelefono("1234567890");
         a.setSemestre(1);
         
         Docente d=new Docente();

@@ -12,6 +12,7 @@ import java.time.LocalDate;
  * @author paveg
  */
 public class Persona {
+
     private String nombre;
     private String apellidos;
     private LocalDate fechaNac;
@@ -39,17 +40,17 @@ public class Persona {
             }
         } else {
             System.err.println("Fecha de ingreso no válida (las fechas válidas "
-                    + "deben ir de " +minima + " al " + maxima+")");
+                    + "deben ir de " + minima + " al " + maxima + ")");
         }
     }
-    
+
     public String getNombre() {
         return nombre;
     }
 
     public void setNombre(String nombre) {
         if (nombre != null) {
-            nombre = nombre.trim();
+            nombre = Utilerias.limpiarEspacios(nombre);
             //Verificar la longitud
             if (nombre.length() >= 2 && nombre.length() <= 30) {
                 this.nombre = nombre;
@@ -67,7 +68,19 @@ public class Persona {
     }
 
     public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
+        if (apellidos != null) {
+            apellidos = Utilerias.limpiarEspacios(apellidos);
+            //Verificar la longitud
+            if (apellidos.length() >= 2 && apellidos.length() <= 40) {
+                this.apellidos = apellidos;
+            } else {
+                System.err.println("Los apellidos no son válidos "
+                        + "(deben tener entre "
+                        + "2 y 40 caracteres sin espacios a los extremos)");
+            }
+        } else {
+            System.err.println("Los apellidos son obligatorios");
+        }
     }
 
     public LocalDate getFechaNac() {
@@ -83,7 +96,19 @@ public class Persona {
     }
 
     public void setDireccion(String direccion) {
-        this.direccion = direccion;
+        if (direccion != null) {
+            direccion = Utilerias.limpiarEspacios(direccion);
+            //Verificar la longitud
+            if (direccion.length() >= 10 && direccion.length() <= 100) {
+                this.direccion = direccion;
+            } else {
+                System.err.println("La direccion no es válida "
+                        + "(deben tener entre "
+                        + "10 y 100 caracteres sin espacios a los extremos)");
+            }
+        } else {
+            System.err.println("La direccion es obligatoria");
+        }
     }
 
     public String getTelefono() {
@@ -91,7 +116,11 @@ public class Persona {
     }
 
     public void setTelefono(String telefono) {
-        this.telefono = telefono;
+        if(telefono!=null && telefono.matches("^[\\d]{10}$")){
+            this.telefono = telefono;
+        }else{
+            System.out.println("El número de telefono es obligatorio y tener 10 dígitos");
+        }
     }
 
     public String getEmail() {
@@ -99,8 +128,11 @@ public class Persona {
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        if(email!=null && email.matches("^[a-zA-Z0-9_!#$%&'\\*+/=?{|}~^.-]+@[a-zA-Z0-9.-]+$")){
+            this.email = email.trim();
+        }else{
+            System.out.println("El correo electrónico es obligatorio y debe tener un formato válido");
+        }
     }
-    
-    
+
 }
