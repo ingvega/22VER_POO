@@ -68,5 +68,12 @@ public class Alumno extends Persona{
         }
     }
     
+    @Override
+    public String toString(){
+        return "No Control: " + getNoControl() +
+            "\nNombre: " + getNombre() + " " + getApellidos() +
+            "\nIngreso: " + getFechaIngreso()+
+            "\nCarrera: " + getCarrera();
+    }
     
 }

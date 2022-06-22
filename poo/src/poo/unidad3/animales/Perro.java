@@ -9,8 +9,16 @@ package poo.unidad3.animales;
  *
  * @author paveg
  */
+
 public class Perro extends Canino {
+    public Perro(String nombre, String descripcion){
+        super(nombre,descripcion);
+    }
     public void hacerSonido(){
         System.out.println("Guau!! Guau!!");
+    }
+    
+    public String toString(){
+        return "Perro " + super.toString();
     }
 }

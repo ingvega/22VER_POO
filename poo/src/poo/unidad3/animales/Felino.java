@@ -10,6 +10,15 @@ package poo.unidad3.animales;
  * @author paveg
  */
 public class Felino extends Animal{
+    public Felino(String nombre, String descripcion){
+        super(nombre,descripcion);
+    }
+
+    //Llamar la clase base con argumentos predeterminados
+//    public Felino(){
+//        super(null,null);
+//    }
+    
     @Override
     public void vagar(){
         System.out.println("Vagando como felino");

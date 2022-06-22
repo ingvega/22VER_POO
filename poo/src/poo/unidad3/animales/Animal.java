@@ -13,6 +13,13 @@ public class Animal {
     private String nombre;
     private String descripcion;
 
+//    public Animal(){
+//    }
+    public Animal(String nombre, String descripcion){
+        this.nombre=nombre;
+        this.descripcion=descripcion;
+    }
+    
     public String getNombre() {
         return nombre;
     }
@@ -35,5 +42,10 @@ public class Animal {
     
     public void hacerSonido(){
         System.out.println("Sonido genérico de animal");
+    }
+    
+    @Override
+    public String toString(){
+        return "llamado " + getNombre() + " ("+ getDescripcion() +")";
     }
 }

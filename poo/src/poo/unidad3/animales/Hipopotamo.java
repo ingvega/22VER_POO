@@ -11,6 +11,14 @@ package poo.unidad3.animales;
  */
 public class Hipopotamo extends Animal {
     
+    public Hipopotamo(){
+        //super("","");
+        this("","");
+    }
+    
+    public Hipopotamo(String nombre, String descripcion){
+        super(nombre,descripcion);
+    }
     public void hacerSonido(){
         System.out.println("Sonido del hipopótamo");
     }

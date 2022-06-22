@@ -14,23 +14,26 @@ import java.util.ArrayList;
 public class Prueba {
     public static void main(String[] args) {
         ArrayList<Animal> animales=new ArrayList<Animal>();
-        animales.add(new Gato());
-        animales.add(new Perro());
+        animales.add(new Gato("Garffield","naranja que le gusta la lasagna",7));
+        animales.add(new Perro("Firulais", "amarillo con negro"));
+        animales.add(new Gato("Don gato","amarillo y tiene su propia pandilla",10));
         
-        Gato g=(Gato) animales.get(0);
-        Perro p=(Perro) animales.get(1);
-        g.setNombre("Garffield");
-        p.setNombre("Firulais");
+//        Gato g=(Gato) animales.get(0);
+//        Perro p=(Perro) animales.get(1);
+//        g.setNombre("Garffield");
+//        p.setNombre("Firulais");
         
         for (int i = 0; i < animales.size(); i++) {
-            //El animal es un gato?
-            if(animales.get(i) instanceof Gato){
-                System.out.print(animales.get(i).getNombre());
-                animales.get(i).hacerSonido();
-            }else{
-                System.out.print(animales.get(i).getNombre());
-                animales.get(i).hacerSonido();
-            }
+            System.out.println(animales.get(i));
+            
+                //El animal es un gato?
+//            if(animales.get(i) instanceof Gato){
+//                System.out.print(animales.get(i).getNombre());
+//                animales.get(i).hacerSonido();
+//            }else{
+//                System.out.print(animales.get(i).getNombre());
+//                animales.get(i).hacerSonido();
+//            }
         }
     }
 }
