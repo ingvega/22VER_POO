@@ -18,6 +18,12 @@ public class Perro extends Canino {
         System.out.println("Guau!! Guau!!");
     }
     
+    @Override
+    public void comer() {
+        System.out.println("Estoy comiendo croquetas");
+    }
+    
+    @Override
     public String toString(){
         return "Perro " + super.toString();
     }

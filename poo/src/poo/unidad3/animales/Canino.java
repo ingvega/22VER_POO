@@ -9,7 +9,7 @@ package poo.unidad3.animales;
  *
  * @author paveg
  */
-public class Canino  extends Animal{
+public abstract class Canino  extends Animal{
     
     public Canino(String nombre, String descripcion){
         super(nombre,descripcion);
